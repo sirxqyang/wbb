@@ -1,0 +1,29 @@
+============================
+file transformation toolbox
+============================
+Time-stamp: <2013-01-09 Xiaoqin Yang>
+
+
+Usage of bed_divide.py
+=======================
+
+In bed file, reads were first divided by positive and negative strand, 
+then by chromosomes. Two folders, each of them have 24 bed files.
+
+python bed_divide.py -i xxx.bed
+
+
+Usage of wig_divide.py
+=======================
+
+wig file were divided into 24 wig files according to chromosomes.
+
+python wig_divide.py -i xxx.wig
+
+
+Usage of bed_to_wig.py
+=======================
+
+transfer bed file into wig file.
+
+python bed_to_wig.py -i input bed file -o output wig file

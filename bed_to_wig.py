@@ -11,18 +11,20 @@ chrlength['yeast'] = {'chr1' : 230208,  'chr2' : 813178,  'chr3' : 316617,  'chr
 
 chrlength['dm3'] = {'chr2L':23011544,'chr2LHet':368872,'chr2R':21146708,'chr2RHet':3288761,
                     'chr3L':24543557,'chr3LHet':2555491,'chr3R':27905053,'chr3RHet':2517507,
-		    'chr4':1351857,'chrX':22422827,'chrXHet':204112,'chrYHet':347038,'chrU':10049037,
-		    'chrUextra':29004656,'chrM':19517}
+                    'chr4':1351857,'chrX':22422827,'chrXHet':204112,'chrYHet':347038,'chrU':10049037,
+                    'chrUextra':29004656,'chrM':19517}
 
-chrlength['zv9'] = { 'chr1':60348388,'chr2':60300536,'chr3':63268876,'chr4':62094675,
-'chr5':75682077,'chr6':59938731,'chr7':77276063,'chr8':56184765,'chr9':58232459,'chr10':46591166,'chr11':46661319,
-'chr12':50697278,'chr13':54093808,'chr14':53733891,'chr15':47442429,'chr16':58780683,'chr17':53984731,'chr18':49877488,
-'chr19':50254551,'chr20':55952140,'chr21':44544065,'chr22':42261000,'chr23':46386876,'chr24':43947580,'chr25':38499472}
+chrlength['zv9'] = { 'chr1':60348388,'chr2':60300536,'chr3':63268876,'chr4':62094675,'chr5':75682077,
+                    'chr6':59938731,'chr7':77276063,'chr8':56184765,'chr9':58232459,'chr10':46591166,
+                    'chr11':46661319,'chr12':50697278,'chr13':54093808,'chr14':53733891,'chr15':47442429,
+                    'chr16':58780683,'chr17':53984731,'chr18':49877488,'chr19':50254551,'chr20':55952140,
+                    'chr21':44544065,'chr22':42261000,'chr23':46386876,'chr24':43947580,'chr25':38499472}
 
-chrlength['hg19'] = {'chr1':249250621,'chr2':243199373,'chr3':198022430,'chr4':191154276,'chr5':180915260,'chr6':171115067,
-'chr7':159138663,'chrX':155270560,'chr8':146364022,'chr9':141213431,'chr10':135534747,'chr11':135006516,'chr12':133851895,
-'chr13':115169878,'chr14':107349540,'chr15':102531392,'chr16':90354753,'chr17':81195210,'chr18':78077248,'chr20':63025520,
-'chrY':59373566,'chr19':59128983,'chr22':51304566,'chr21':48129895}
+chrlength['hg19'] = {'chr1':249250621,'chr2':243199373,'chr3':198022430,'chr4':191154276,'chr5':180915260,
+                    'chr6':171115067,'chr7':159138663,'chrX':155270560,'chr8':146364022,'chr9':141213431,
+                    'chr10':135534747,'chr11':135006516,'chr12':133851895,'chr13':115169878,'chr14':107349540,
+                    'chr15':102531392,'chr16':90354753,'chr17':81195210,'chr18':78077248,'chr20':63025520,
+                    'chrY':59373566,'chr19':59128983,'chr22':51304566,'chr21':48129895}
 
 
 def tag2hash(bedfile, spename, extension, shift):
@@ -56,7 +58,7 @@ def tag_to_wig(hash_values, wigfile, step, spename):
     namelist.sort()
     for name in namelist:
         fileout = open(name + '_' + wigfile + '.wig','w')
-	print >>fileout, "track type=wiggle_0 name=" + name
+        print >>fileout, "track type=wiggle_0 name=" + name
         print >>fileout, "fixedStep  chrom=" + name + "  start=1  step=" + str(step)
         for k in xrange(0, len(hash_values[name]), step):
             print >>fileout, hash_values[name][k]
